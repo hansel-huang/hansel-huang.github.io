@@ -53,8 +53,8 @@ E-mail: hansel2001@163.com
     
     <body>
         <center>
-            <a href="SecretRoom/SecretRoom.html"><div style="height:10px; background-color:#99ccdd;"></div></a>
-            <h1 style="margin-top:40px; margin-bottom:50px;"><a class="intro" href="./AboutMe/AboutMe.html" target="_blank">Hansel Huang</a>'s Blog Here!</h1>
+            <div id="enter-secret-room" style="height:10px; background-color:#99ccdd;"></div>
+            <h1 id="flag-unlock" style="margin-top:40px; margin-bottom:50px;"><a class="intro" href="./AboutMe/AboutMe.html" target="_blank">Hansel Huang</a>'s Blog Here!</h1>
             
             <div class="container-diary">
                 <!-- December 2021 -->
@@ -88,5 +88,26 @@ E-mail: hansel2001@163.com
                 <small>And history versions of the website is stored <a href="./HistoryVersion/HistoryVersion.html" target="_blank">here</a></small>
             </div>
         </center>
+        
+        <script type="text/javascript">
+            var flag = false;
+            var clickNum = 0;
+            document.getElementById("enter-secret-room").onclick = function() {
+                clickNum++;
+                if( clickNum == 5) {
+                    if( flag ) {
+                        var str = prompt();
+                        if( str == "hansel" ) {
+                            window.location.href="SecretRoom/SecretRoom.html";
+                        }
+                    }
+                    clickNum = 0;
+                }
+            }
+            document.getElementById("flag-unlock").onclick = function() {
+                flag = true;
+                clickNum = 0;
+            }
+        </script>
     </body>
 </html>

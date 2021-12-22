@@ -10,6 +10,7 @@ E-mail: hansel2001@163.com
 <html>
     <head>
         <meta charset="utf-8" />
+        <script type="text/javascript" src="./pkg/md5.js"></script>
         <link rel="icon" type="image/png" sizes="144x144" href="logo.png"/>
         <title>Home Page | Hansel-Huang's Blog</title>
         <style>
@@ -90,6 +91,7 @@ E-mail: hansel2001@163.com
         </center>
         
         <script type="text/javascript">
+            // click AboutMe, then click blue bar 5 times.
             var flag = false;
             var clickNum = 0;
             document.getElementById("enter-secret-room").onclick = function() {
@@ -97,7 +99,9 @@ E-mail: hansel2001@163.com
                 if( clickNum == 5) {
                     if( flag ) {
                         var str = prompt();
-                        if( str == "hansel" ) {
+                        str = hex_md5( str );
+                        // hansel
+                        if( str == "c5b0541b04070a3cfef7fe32bb63da0a" ) {
                             window.location.href="SecretRoom/SecretRoom.html";
                         }
                     }

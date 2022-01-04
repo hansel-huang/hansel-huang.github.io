@@ -31,7 +31,7 @@ E-mail: hansel2001@163.com
                 color: red;
             }
             .projects-area {
-                height: 500px;
+                height: 420px;
                 line-height: 21px;
             }
             .container-bottom {
@@ -41,13 +41,15 @@ E-mail: hansel2001@163.com
         </style>
     </head>
     
-    <body>
+    <body onload="main()">
         <center>
             <a class="back-home" href="../index.html"><div style="height:10px; background-color:#99ccdd;"></div></a>
-            <h1 style="margin-top:40px; margin-bottom:50px;">Projects</h1>
+            <h1 style="margin-top:40px; margin-bottom:30px;">Projects</h1>
             
             <div class="projects-area">
-                
+                <canvas id="webgl" width="400" height="400">
+                Please use a browser that supports "canvas"
+                </canvas>
             </div>
             
             <div class="container-bottom">
@@ -55,5 +57,11 @@ E-mail: hansel2001@163.com
                 <small>Click the blue bar at the top of the page to return Home.</small>
             </div>
         </center>
+        
+        <script src="./lib/webgl-utils.js"></script>
+        <script src="./lib/webgl-debug.js"></script>
+        <script src="./lib/cuon-utils.js"></script>
+        <script src="./lib/cuon-matrix.js"></script>
+        <script src="MultiJointModel.js"></script>
     </body>
 </html>

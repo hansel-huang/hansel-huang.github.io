@@ -50,8 +50,7 @@ E-mail: hansel2001@163.com
             
             <div class="about-me">
                 <p>
-                    <a onclick="copyToClipboard(\'hansel2001@163.com\')">复制</a>
-                    我是来自南昌航空大学软件工程专业的一名大四学生，我的电子邮箱是 <label style="user-select:text;">hansel2001@163.com</label>
+                    我是来自南昌航空大学软件工程专业的一名大四学生，我的电子邮箱是 <a title="点击复制文本" onclick="copyToClipboard(\'hansel2001@163.com\')">hansel2001@163.com</a>
                 </p>
             </div>
             
@@ -62,6 +61,7 @@ E-mail: hansel2001@163.com
         </center>
         
         <script>
+            /* 点击复制电子邮件 */
             function copyToClipboard(s) {
                 if(window.clipboardData) {
                     window.clipboardData.setData(\'text\', s);

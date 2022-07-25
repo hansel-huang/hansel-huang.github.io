@@ -1,0 +1,88 @@
+<!--
+CommentArea-Page
+Blog Owner: Hansel Huang
+E-mail: hansel2001@163.com, 1564546651@qq.com
+-->
+
+
+
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+        <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+        
+        <link rel="icon" type="image/png" sizes="144x144" href="../logo.png"/>
+        <title>留言区 | Hansel-Huang's Blog</title>
+        <style>
+            body,h1,h2,h3,h4,h5,h6 {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                font-family: "Lucida Console", "Courier New", "仿宋", monospace;
+                user-select: none;
+            }
+            p {
+                line-height: 21px;
+            }
+            a:link, a:visited {
+                color: #5599aa;
+            }
+            a:hover {
+                color: red;
+            }
+            .paper-sheet {
+                padding: 50px;
+                width: 800px;
+                height: 300px;
+                text-align: left;
+                background-color: #fcfdf8;
+            }
+            .update-record {
+                padding: 20px;
+                width: 860px;
+                height: 100px;
+                text-align: left;
+                background-color: #fcfdf8;
+            }
+            .container-bottom {
+                margin-top: 15px;
+                margin-bottom: 10px;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <center>
+            <a class="back-home" href="../index.html"><div style="height:10px; background-color:#99ccdd;"></div></a>
+            <h1 style="margin-top:40px; margin-bottom:50px;">Comment Area</h1>
+            
+            <!-- blog-comment -->
+            <div id="gitalk-container" style="width:800px;"></div>
+            
+            <div class="container-bottom">
+                <small>This site is open sourse. <a href="https://github.com/hansel-huang/hansel-huang.github.io" target="_blank">See it on Github.</a></small><br>
+                <small>Click the blue bar at the top of the page to return Home.</small>
+            </div>
+        </center>
+        
+        <script type="text/javascript">
+            /* comment area */
+            var gitalk = new Gitalk({
+                clientID: 'c6669dfeec1fc045d723',
+
+                clientSecret: '751bdb51caf3048534a8a31a94e9b1cb6cb582b4',
+
+                repo: 'blog-comment',
+                owner: 'hansel-huang',
+                admin: ['hansel-huang'],
+                id: "hansel-huang-blog-comment-area",
+                distractionFreeMode: false
+            });
+            gitalk.render('gitalk-container');
+        </script>
+    </body>
+</html>

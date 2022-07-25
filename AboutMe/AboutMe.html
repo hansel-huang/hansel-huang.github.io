@@ -11,18 +11,19 @@ E-mail: hansel2001@163.com
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/png" sizes="144x144" href="../logo.png"/>
-        <title>About Me | Hansel-Huang's Blog</title>
+        <title>个人简介 | Hansel-Huang's Blog</title>
         <style>
             body,h1,h2,h3,h4,h5,h6 {
                 margin: 0;
                 padding: 0;
             }
             body {
-                font-family: "Lucida Console", "Courier New", monospace;
+                font-family: "Lucida Console", "Courier New", "仿宋", monospace;
+                font-size: 20px;
                 user-select: none;
             }
             p {
-                line-height: 21px;
+                line-height: 32px;
             }
             a:link, a:visited {
                 color: #5599aa;
@@ -31,7 +32,7 @@ E-mail: hansel2001@163.com
                 color: red;
             }
             .about-me {
-                width: 800px;
+                width: 950px;
                 height: 500px;
                 text-align: left;
             }
@@ -49,16 +50,8 @@ E-mail: hansel2001@163.com
             
             <div class="about-me">
                 <p>
-                    <b>Q1: Who are you?</b><br>
-                    A1: I'm a university student from China. And I'm major in Software Engineering.
-                </p>
-                <p>
-                    <b>Q2: Why do you create this blog site?</b><br>
-                    A2: Because I want to express some thoughts and preserve them, especially when I realized the lack of my thoughts.
-                </p>
-                <p>
-                    <b>Q3: How could I contact you?</b><br>
-                    A3: By E-mail. My E-mail is <b>hansel2001@163.com</b>. Please feel free to contact me if you have any questions. Or you just want to give me some comments about my blog. I would like to see your feedback. And I have <a href="https://www.cnblogs.com/hanselhuang/" target="_blank">another blog</a>, you can get more information in there.
+                    <p onclick="copyToClipboard(\'hansel2001@163.com\')">复制</p>
+                    我是来自南昌航空大学软件工程专业的一名大四学生，我的电子邮箱是 <label style="user-select:text;">hansel2001@163.com</label>
                 </p>
             </div>
             
@@ -67,5 +60,22 @@ E-mail: hansel2001@163.com
                 <small>Click the blue bar at the top of the page to return Home.</small>
             </div>
         </center>
+        
+        <script>
+            function copyToClipboard(s) {
+                if(window.clipboardData) {
+                    window.clipboardData.setData(\'text\', s);
+                } else {
+                    (function(s) {
+                        document.oncopy = function(e) {
+                            e.clipboardData.setData(\'text\', s);
+                            e.preventDefault();
+                            document.oncopy = null;
+                        }
+                    }) (s);
+                    document.execCommand(\'Copy\');
+                }
+            }
+        </script>
     </body>
 </html>

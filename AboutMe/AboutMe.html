@@ -77,19 +77,8 @@ E-mail: hansel2001@163.com
         
         <script>
             /* 点击复制电子邮件到剪切板 */
-            function copyToClipboard(s) {
-                if(window.clipboardData) {
-                    window.clipboardData.setData(\'text\', s);
-                } else {
-                    (function(s) {
-                        document.oncopy = function(e) {
-                            e.clipboardData.setData(\'text\', s);
-                            e.preventDefault();
-                            document.oncopy = null;
-                        }
-                    }) (s);
-                    document.execCommand(\'Copy\');
-                }
+            function copyToClipboard(str) {
+                window.clipboardData.setData("text", str);
             }
         </script>
         

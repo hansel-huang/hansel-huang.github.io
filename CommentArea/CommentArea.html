@@ -7,15 +7,22 @@ E-mail: hansel2001@163.com, 1564546651@qq.com
 
 
 <!DOCTYPE HTML>
+
+
 <html>
+
+
     <head>
+    
         <meta charset="utf-8" />
-        
+        <!-- 调用评论区Gitalk所需文件 -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
         <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
         
         <link rel="icon" type="image/png" sizes="144x144" href="../logo.png"/>
+        <!-- 网页标题 -->
         <title>留言区 | Hansel-Huang's Blog</title>
+        
         <style>
             body,h1,h2,h3,h4,h5,h6 {
                 margin: 0;
@@ -23,10 +30,11 @@ E-mail: hansel2001@163.com, 1564546651@qq.com
             }
             body {
                 font-family: "Lucida Console", "Courier New", "仿宋", monospace;
+                font-size: 20px;
                 user-select: none;
             }
             p {
-                line-height: 21px;
+                line-height: 32px;
             }
             a:link, a:visited {
                 color: #5599aa;
@@ -43,26 +51,31 @@ E-mail: hansel2001@163.com, 1564546651@qq.com
             }
             .update-record {
                 padding: 20px;
-                width: 860px;
+                width: 900px;
                 height: 100px;
                 text-align: left;
                 background-color: #fcfdf8;
             }
             .container-bottom {
-                margin-top: 15px;
+                margin-top: 50px;
                 margin-bottom: 10px;
             }
         </style>
     </head>
     
+    
+    
     <body>
+    
         <center>
             <a class="back-home" href="../index.html"><div style="height:10px; background-color:#99ccdd;"></div></a>
+            <!-- 标题 -->
             <h1 style="margin-top:40px; margin-bottom:50px;">Comment Area</h1>
             
-            <!-- blog-comment -->
+            <!-- Gitalk留言区 -->
             <div id="gitalk-container" style="width:800px;"></div>
             
+            <!-- 底部指向github源文件 -->
             <div class="container-bottom">
                 <small>This site is open sourse. <a href="https://github.com/hansel-huang/hansel-huang.github.io" target="_blank">See it on Github.</a></small><br>
                 <small>Click the blue bar at the top of the page to return Home.</small>
@@ -70,7 +83,7 @@ E-mail: hansel2001@163.com, 1564546651@qq.com
         </center>
         
         <script type="text/javascript">
-            /* comment area */
+            /* Gitalk留言区 */
             var gitalk = new Gitalk({
                 clientID: 'c6669dfeec1fc045d723',
 
@@ -84,5 +97,9 @@ E-mail: hansel2001@163.com, 1564546651@qq.com
             });
             gitalk.render('gitalk-container');
         </script>
+        
     </body>
+    
+    
+    
 </html>

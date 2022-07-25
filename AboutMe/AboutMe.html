@@ -64,7 +64,7 @@ E-mail: hansel2001@163.com
             <!-- 内容 -->
             <div class="about-me">
                 <p>
-                    我是来自南昌航空大学软件工程专业的一名大四学生，我的电子邮箱是 <a title="点击复制文本信息" onclick="copyToClipboard(\'hansel2001@163.com\')">hansel2001@163.com</a>
+                    我是来自南昌航空大学软件工程专业的一名大四学生，你可以通过<a title="hansel2001@163.com" href="mailto:hansel2001@163.com">电子邮件</a>联系我。
                 </p>
             </div>
             
@@ -74,21 +74,6 @@ E-mail: hansel2001@163.com
                 <small>Click the blue bar at the top of the page to return Home.</small>
             </div>
         </center>
-        
-        <script>
-            /* 点击复制到剪切板 */
-            function copyToClipboard(str) {
-                const input = document.createElement('input');
-                document.body.appendChild(input);
-                input.setAttribute('value', str);
-                input.select();
-                if (document.execCommand('copy')) {
-                    document.execCommand('copy');
-                    layer.msg("复制成功！")
-                }
-                document.body.removeChild(input);
-            }
-        </script>
         
     </body>
     

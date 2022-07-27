@@ -1,0 +1,101 @@
+<!--
+CommentArea-Page
+Blog Owner: Hansel Huang
+E-mail: hansel2001@163.com
+-->
+
+
+
+<!DOCTYPE HTML>
+
+
+<html>
+
+
+    <head>
+    
+        <meta charset="utf-8" />
+        <!-- 调用评论区Gitalk所需文件 -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+        <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+        
+        <link rel="icon" type="image/png" sizes="144x144" href="../logo.png"/>
+        <!-- 网页标题 -->
+        <title>相册 | Hansel-Huang's Blog</title>
+        
+        <style>
+            body,h1,h2,h3,h4,h5,h6 {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                font-family: "Lucida Console", "Courier New", "仿宋", monospace;
+                font-size: 20px;
+                user-select: none;
+            }
+            p {
+                line-height: 32px;
+            }
+            .container-album {
+                width: 800px;
+                height: 520px;
+                background-color: #fcfdf8;
+            }
+            /* 相册统一样式 */
+            .album {
+                box-shadow: 10px 10px 10px gray;
+                z-index: 10;
+            }
+            .album:hover {
+                transform: scale(1.2);
+                z-index: 20;  /* 防止遮住 */
+            }
+            /* 相册各自特点 */
+            .album-primary {
+                position: absolute;
+                margin-top: 100px;
+                margin-left: -250px;
+                transform: rotate(10deg);  /* 旋转 */
+            }
+            .album-middle {
+                position: absolute;
+                margin-top: 200px;
+                margin-left: -50px;
+                transform: rotate(5deg);  /* 旋转 */
+            }
+            .container-bottom {
+                margin-top: 50px;
+                margin-bottom: 10px;
+            }
+        </style>
+    </head>
+    
+    
+    
+    <body>
+    
+        <center>
+            <a class="back-home" href="../index.html"><div style="height:10px; background-color:#99ccdd;"></div></a>
+            <!-- 标题 -->
+            <h1 style="margin-top:40px; margin-bottom:50px;">Album</h1>
+            
+            <!-- 相册背景 -->
+            <div class="container-album">
+                <!-- 小学相册 -->
+                <a href="小学/_primary.html" target="_blank" title="小学"><img class="album album-primary" src="小学/2012年11月11日 1915.jpg" width="160px"></a>
+                <!-- 中学相册 -->
+                <a href="中学/_middle.html" target="_blank" title="中学"><img class="album album-middle" src="中学/2018年7月22日 1224.jpg" width="130px"></a>
+            </div>
+            
+            <!-- 底部指向github源文件 -->
+            <div class="container-bottom">
+                <small>This site is open sourse. <a href="https://github.com/hansel-huang/hansel-huang.github.io" target="_blank">See it on Github.</a></small><br>
+                <small>Click the blue bar at the top of the page to return Home.</small>
+            </div>
+        </center>
+        
+    </body>
+    
+    
+    
+</html>

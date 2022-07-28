@@ -1,0 +1,302 @@
+<!--
+Diary-Page
+Blog Owner: Hansel Huang
+E-mail: hansel2001@163.com
+-->
+
+
+
+<!DOCTYPE HTML>
+
+
+<html>
+
+
+
+    <head>
+    
+        <meta charset="utf-8" />
+        
+        <!-- 导入pkg文件夹中的jQuery库 -->
+        <script src="../../../pkg/jquery-3.6.0.min.js"></script>
+        
+        <link rel="icon" type="image/png" sizes="144x144" href="../../../logo.png"/>
+        <!-- 网页标题 -->
+        <title>jQuery学习 | Diary: 2022-07-28 | Hansel-Huang's Blog</title>
+        
+        <style>
+            body,h1,h2,h3,h4,h5,h6 {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                font-family: "Lucida Console", "Courier New", "仿宋", monospace;
+                font-size: 20px;
+                user-select: none;
+            }
+            p {
+                line-height: 32px;
+            }
+            a:link, a:visited {
+                color: #5599aa;
+            }
+            a:hover {
+                color: red;
+            }
+            .paper-sheet {
+                padding: 50px;
+                width: 800px;
+                height: 650px;
+                text-align: left;
+                background-color: #fcfdf8;
+            }
+            .update-record {
+                padding: 20px;
+                width: 860px;
+                height: 100px;
+                text-align: left;
+                background-color: #fcfdf8;
+            }
+            .container-bottom {
+                margin-top: 15px;
+                margin-bottom: 10px;
+            }
+            
+            
+            /* 轮播图效果 */
+            .container-box {
+                overflow: hidden;
+                position: relative;
+                width: 576px;
+                height: 266px;
+            }
+            .photos {
+                position: absolute;
+                width: 5184px;
+                height: 266px;
+            }
+            .photos img {
+                float: left;
+                width: 576px;
+                height: 266px;
+            }
+            .next,
+            .last {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 30px;
+                height: 60px;
+            }
+            .next {
+                right: 0;
+                background: url(./images/右.png) no-repeat center center / 32px 32px rgba(255, 255, 255, 0.5);
+            }
+            .last {
+                left: 0;
+                background: url(./images/左.png) no-repeat center center / 32px 32px rgba(255, 255, 255, 0.5);
+            }
+            .btns {
+                position: absolute;
+                top: 85%;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 200px;
+            }
+            .btns span {
+                float: left;
+                display: block;
+                margin: 4px;
+                width: 14px;
+                height: 14px;
+                background-color: #ffffff80;
+                border-radius: 50%;
+                font-size: 12px;
+                line-height: 14px;
+                text-align: center;
+                cursor: pointer;
+            }
+            .btns span:nth-child(1) {
+                background-color: deepskyblue;
+                color: #fff;
+            }
+        </style>
+        
+    </head>
+    
+    
+    
+    <body>
+    
+        <center>
+        
+            <a class="back-home" href="../../../index.html"><div style="height:10px; background-color:#99ccdd;"></div></a>
+            <h1 style="margin-top:40px; margin-bottom:50px;">jQuery学习</h1>
+            
+            <!-- 文本区 -->
+            <div class="paper-sheet">
+            
+                <p>&emsp;&emsp;之前大二还是大三的实验课上就有人使用jQuery库做出了不错的效果，像轮播图之类的，当时和我们做的普通的HTML网页比起来效果就很惊艳。当时虽然觉得使用框架实现的效果确实很不错，但是总是没有感觉到必要性，像在课程设计时使用Vue加Element-UI，几个现成的组件就能搭建起来像样的网页，但最终目的不过是应付下课程答辩罢了，课程结束就过去了。现在我想起了jQuery这个轻量级框架，正好在我的博客里面有用，现在就来学它。所以大学课程最好还是目标导向，可以把做好的东西放到线上，可以看到效果，不然不知道做出来了有什么用，没有任何获得感，就只想糊弄过去了。</p>
+                
+                
+                <!-- 轮播图效果 -->
+                <p>>> 轮播图</p>
+                <center>
+                    <!-- 显示区域 -->
+                    <div class="container-box">
+                    
+                        <!-- 所有图片 -->
+                        <div class="photos">
+                            <!-- 为了无缝切换，在后面增加第一张图作为掩饰 -->
+                            <a href="./images/img1.jpg" target="_blank"><img src="./images/img1.jpg"></a>
+                            <a href="./images/img2.jpg" target="_blank"><img src="./images/img2.jpg"></a>
+                            <a href="./images/img3.jpg" target="_blank"><img src="./images/img3.jpg"></a>
+                            <a href="./images/img4.jpg" target="_blank"><img src="./images/img4.jpg"></a>
+                            <a href="./images/img5.jpg" target="_blank"><img src="./images/img5.jpg"></a>
+                            <a href="./images/img6.jpg" target="_blank"><img src="./images/img6.jpg"></a>
+                            <a href="./images/img7.jpg" target="_blank"><img src="./images/img7.jpg"></a>
+                            <a href="./images/img8.jpg" target="_blank"><img src="./images/img8.jpg"></a>
+                            <a href="./images/img1.jpg" target="_blank"><img src="./images/img1.jpg"></a>
+                        </div>
+                        
+                        <!-- 圆点按钮 -->
+                        <div class="btns">
+                            <span>1</span>
+                            <span>2</span>
+                            <span>3</span>
+                            <span>4</span>
+                            <span>5</span>
+                            <span>6</span>
+                            <span>7</span>
+                            <span>8</span>
+                        </div>
+                        
+                        <!-- 上一张按钮 -->
+                        <div class="last"></div>
+                        <!-- 下一张按钮 -->
+                        <div class="next"></div>
+                        
+                    </div>
+                
+                </center>
+                
+                
+            </div>
+            <br>
+            
+            <!-- 更新记录 -->
+            <div class="update-record">
+                <h4>Update Record:</h4>
+                <p>
+                    2022-07-28 17:57 | 忘不了的小时候的魔性曲调<br>
+                </p>
+            </div>
+            
+            <!-- 底部指向github源文件 -->
+            <div class="container-bottom">
+                <small>This site is open sourse. <a href="https://github.com/hansel-huang/hansel-huang.github.io" target="_blank">See it on Github.</a></small><br>
+                <small>Click the blue bar at the top of the page to return Home.</small>
+            </div>
+            
+        </center>
+        
+        
+        <script>
+            
+            /* 轮播图效果 */
+            $(function() {
+                // 图片的下标
+                var index = 0;
+                // 图片的宽度
+                var w = $('.photos img').width();
+
+                // 点击切换下一张图片
+                $('.next').click(function() {
+                    // 图片序号+1，图片向右移动一张图片的距离
+                    index++;
+                    // 调用 图片移动函数
+                    move();
+                    // 按钮颜色改变
+                    btnColor();
+                });
+
+                // 点击切换上一张图片
+                $('.last').click(function() {
+                    // 图片序号-1，图片向左移动一张图片的距离
+                    index--;
+                    // 调用 图片移动函数
+                    move();
+                    // 按钮颜色改变
+                    btnColor();
+                });
+
+                // 点击圆点切换图片
+                $('.btns span').click(function(e) {
+                    // 下标是对应的
+                    index = $(this).index();
+                    move();
+                    btnColor();
+                })
+
+                // 图片移动函数
+                function move() {
+                    // 当图片显示第一张时，点击上一张按钮，下标和坐标变为最后一张图片，
+                    if (index < 0) {
+                        index = 7;
+                        $('.photos').animate({
+                            left: -w * (index + 1)
+                        }, 0)
+                    }
+                    // 根据下标移动图片
+                    $('.photos').animate({
+                        left: -w * index
+                    });
+                    // 当图片移动到最后一张时，下标变为0，坐标变为第一张图片
+                    if (index === 8) {
+                        index = 0;
+                        $('.photos').animate({
+                            left: 0
+                        }, 0)
+                    }
+                };
+
+                // 圆点颜色随图片移动而改变
+                function btnColor() {
+                    // 将点击的圆点变为蓝色
+                    $('.btns span').eq(index).css({ backgroundColor: 'deepskyblue', color: '#fff' });
+                    // 将其他的圆点变为白色
+                    $('.btns span').eq(index).siblings().css({ backgroundColor: '#ffffff80', color: '#000' });
+                }
+
+                // 定时器，自动轮播
+                var timer = null;
+                // 每隔3s切换下一张图片
+                timer = setInterval(function() {
+                    index++;
+                    move();
+                    btnColor();
+                }, 3000)
+
+                // 鼠标移入清除定时器
+                $('.container-box').mouseover(function() {
+                    clearInterval(timer);
+                });
+
+                // 鼠标移出开启定时器
+                $('.container-box').mouseout(function() {
+                    timer = setInterval(function() {
+                        index++;
+                        move();
+                        btnColor();
+                    }, 3000)
+                })
+
+            })
+            
+        </script>
+        
+    </body>
+    
+    
+    
+</html>

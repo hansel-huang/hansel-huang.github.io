@@ -58,7 +58,7 @@ E-mail: hansel2001@163.com
             /* 标签页 */
             .tab-area {
                 width: 480px;
-                text-align: left;
+                margin-left: -15px;
             }
             /* 标签页0: 主页 */
             #tab0-main {
@@ -128,6 +128,16 @@ E-mail: hansel2001@163.com
                 background-color: #fcfdf8;
                 display: none;
             }
+            /* 标签页4: 存档 */
+            #tab4-file {
+                padding: 50px;
+                margin-top: 20px;
+                width: 700px;
+                height: 400px;
+                text-align: left;
+                background-color: #fcfdf8;
+                display: none;
+            }
             /* 底部信息 */
             .container-bottom {
                 margin-top: 15px;
@@ -154,9 +164,11 @@ E-mail: hansel2001@163.com
                 &emsp;
                 <a onclick="tab_exchange(1)">相 册</a>
                 &emsp;
-                <a onclick="tab_exchange(2)">留言区</a>
+                <a onclick="tab_exchange(2)">留 言</a>
                 &emsp;
                 <a onclick="tab_exchange(3)">日 志</a>
+                &emsp;
+                <a onclick="tab_exchange(4)">存 档</a>
             </div>
             
             
@@ -201,10 +213,21 @@ E-mail: hansel2001@163.com
             <!-- 标签页3: 日志 -->
             <div id="tab3-journal">
                 
-                <div class="paper-sheet">
-                    <p>2022-07-25: 在之前做的全英文日记网站的基础上，删减旧内容并精简网站功能，搭建起现在全新的日记博客网站，新网站的宗旨是记录有意义的事情。目前网站的界面有：《个人简介》、《日记区》和《留言区》。</p>
-                    <p>2022-07-27: 新增《相册区》，完成了小学和中学的相册设计。对网站进行了布局上的调整，调整为四大功能区，主页（日记区）、相册、留言区、日志，并将它们做成标签页的样式，在一个页面中进行切换。</p>
-                </div>
+                <p>2022-07-28: 新增《存档区》，保存不同时期的网站版本。</p>
+                <p>2022-07-27: 新增《相册区》，完成了小学和中学的相册设计。对网站进行了布局上的调整，调整为四大功能区，主页（日记区）、相册、留言区、日志，并将它们做成标签页的样式，在一个页面中进行切换。</p>
+                <p>2022-07-25: 在之前做的全英文日记网站的基础上，删减旧内容并精简网站功能，搭建起现在全新的日记博客网站，新网站的宗旨是记录有意义的事情。目前网站的界面有：《个人简介》、《日记区》和《留言区》。</p>
+                
+            </div>
+            
+            
+            <!-- 标签页4: 存档 -->
+            <div id="tab4-file">
+                
+                <p>>> 2022/07/28: <a href="https://hansel.lanzouy.com/idDe308ivrwh" target="_blank">hansel-huang.github.io-20220728.zip</a></p>
+                
+                <p>>> 2022/07/27: <a href="https://hansel.lanzouy.com/i77RN08ivqih" target="_blank">hansel-huang.github.io-20220727.zip</a></p>
+                
+                <p>>> 2022/01/01: <a href="https://hansel.lanzouy.com/iGKeq08ivona" target="_blank">hansel-huang.github.io-20220101.zip</a></p>
                 
             </div>
             
@@ -237,10 +260,12 @@ E-mail: hansel2001@163.com
                 var tab1 = document.getElementById("tab1-album");
                 var tab2 = document.getElementById("tab2-message");
                 var tab3 = document.getElementById("tab3-journal");
+                var tab4 = document.getElementById("tab4-file");
                 tab0.style.display = "none";
                 tab1.style.display = "none";
                 tab2.style.display = "none";
                 tab3.style.display = "none";
+                tab4.style.display = "none";
                 if(select == 0) {
                     tab0.style.display = "block";
                 } else if(select == 1) {
@@ -249,6 +274,8 @@ E-mail: hansel2001@163.com
                     tab2.style.display = "block";
                 } else if(select == 3) {
                     tab3.style.display = "block";
+                } else if(select == 4) {
+                    tab4.style.display = "block";
                 }
             }
         

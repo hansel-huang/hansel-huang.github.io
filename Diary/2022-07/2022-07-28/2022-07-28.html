@@ -46,14 +46,14 @@ E-mail: hansel2001@163.com
             .paper-sheet {
                 padding: 50px;
                 width: 800px;
-                height: 1100px;
+                height: 2750px;
                 text-align: left;
                 background-color: #fcfdf8;
             }
             .update-record {
                 padding: 20px;
                 width: 860px;
-                height: 100px;
+                height: 130px;
                 text-align: left;
                 background-color: #fcfdf8;
             }
@@ -128,6 +128,46 @@ E-mail: hansel2001@163.com
                 border: 1px solid black;
                 background-color: white;
             }
+            
+            
+            /* 读取本地文件并显示 */
+            .container-openfile {
+                margin-left: 100px;
+            }
+            /* 拖拽文本文件 */
+            .container-dragtxt {
+                margin-left: 100px;
+                width: 600px;
+                height: 200px;
+                border: 1px solid #000;
+                box-shadow: 0 0 5px 2px rgba(0,0,0,.8);
+                border-radius: 10px;
+                line-height: 200px;
+                text-align: center;
+                font-size: 30px;
+                font-weight: 700;
+                text-shadow:0 0 5px;
+                transition:all 1s;
+            }
+            .container-dragtxt #entity {
+                width: 600px;
+                height: 200px;
+            }
+            /* 拖拽图像文件 */
+            #container-dragarea {
+                margin-left: 100px;
+                width: 600px;
+                height: 200px;
+                line-height: 200px;
+                text-align: center;
+                border: 1px solid #DDDDDD;
+            }
+            #container-dragprev {
+                margin-left: 100px;
+                width: 600px;
+                min-height: 400px;
+                border: 1px solid #FF0000;
+            }
         </style>
         
     </head>
@@ -195,6 +235,31 @@ E-mail: hansel2001@163.com
                     <canvas class="container-canvas" id = "myCanvas" width="600px" height="400px"></canvas>
                 </center>
                 
+                
+                <!-- 读取本地文件并显示 -->
+                <br><p>>> 读取本地文件并显示（<a href="https://blog.csdn.net/cnds123/article/details/120469779" target="_blank">原文地址</a>）</p>
+                <!-- 打开文本文件 -->
+                <div class="container-openfile">
+                    <input type="file" name="file" id="filePicker" onchange="show_file()"  />
+                    <br>
+                    <textarea id="txtStory" name="txtStory" rows="15" cols="60">
+                    </textarea>
+                </div><br>
+                <!-- 打开图像文件 -->
+                <div class="container-openfile">
+                    <input type="file" id="selectFile" onchange="dealSelectFile()" />
+                    <div style="width:600px; heightL400px; background-color:white;">
+                        <canvas id="canvas-pic" width="600px" height="400px"></canvas>
+                    </div>
+                </div><br>
+                <!-- 拖拽文本文件 -->
+                <div class="container-dragtxt">拖拽文本文件至此</div><br>
+                <!-- 拖拽图像文件 -->
+                <div id="container-dragarea">将图片拖放到该区域</div>
+                <h3 style="margin-left:100px;">图片预览</h3>
+                <div id="container-dragprev"></div>
+    
+    
             </div>
             <br>
             
@@ -205,6 +270,7 @@ E-mail: hansel2001@163.com
                 <p>
                     2022-07-28 15:46 | 实现了轮播图效果<br>
                     2022-07-29 14:47 | 实现了画板效果<br>
+                    2022-07-29 16:23 | 实现了读取本地文件并显示的功能<br>
                 </p>
             </div>
             
@@ -361,6 +427,114 @@ E-mail: hansel2001@163.com
                     ppDrawLine(mouseX, mouseY);
                 }
             });
+            
+            
+            /* 读取本地文件并显示 */
+            /* 读取txt文件 */
+            function show_file() {
+                var reader = new FileReader();
+                reader.onload = function() {
+                    txtStory.value = this.result;
+                }
+                var f = document.getElementById("filePicker").files[0];
+                reader.readAsText(f);
+            }
+            /* 读取图片文件 */
+            function dealSelectFile() {
+                // get select files.
+                var selectFiles = document.getElementById("selectFile").files;
+                for(var file of selectFiles){
+                    console.log(file.webkitRelativePath);
+                    // read file content.
+                    var reader = new FileReader();
+                    reader.readAsDataURL(file);
+                    reader.onloadend = function() {
+                        // deal data.
+                        var img = new Image();
+                        // after loader, result storage the file content result.
+                        img.src = this.result;
+                        img.onload = function() {
+                            var myCanvas = document.getElementById("canvas-pic");
+                            var cxt = myCanvas.getContext('2d');
+                            cxt.drawImage(img, 0, 0, img.width, img.height, 0, 0, 600, 400);
+                        }
+                    }
+                }
+            }
+            /* 拖拽文本文件 */
+            // 需求：拖拽外部文件到当前页面进行解析
+            // 获取目标元素
+            var box = document.querySelector('.container-dragtxt');
+            // 解决一旦拖拽外部文件就覆盖掉当前页面的问题
+            // 解决：给document绑定drop事件 
+            // drop事件默认触发不了，需要在dragover事件里面阻止默认事件
+            document.ondrop = function(e) {
+                e.preventDefault();
+            }
+            // 这个阻止默认事件是为了让drop事件得以触发
+            document.ondragover = function(e) {
+                e.preventDefault();
+            }
+            box.ondragenter = function() {
+                box.style.boxShadow = '0 0 10px 5px rgba(255,0,0,.8)';
+            }
+            box.ondrop = function(e) {
+                // console.log(e);
+                // 得到拖拽过来的文件
+                var dataFile = e.dataTransfer.files[0];
+                // FileReader实例化
+                var fr = new FileReader();
+                // 异步读取文件
+                fr.readAsText(dataFile);
+                // 读取完毕之后执行
+                fr.onload = function() {
+                    // 获取得到的结果
+                    var data = fr.result;
+                    var ta = document.createElement('textarea');
+                    ta.value = data;
+                    ta.id='entity';
+                    box.innerHTML = '';
+                    box.appendChild(ta);
+         
+                }
+            }
+            /* 拖拽图像文件 */
+            window.onload = function() {
+                var oArea = document.getElementById("container-dragarea");
+                var oPrev = document.getElementById("container-dragprev");
+                
+                oArea.ondragenter = function() {
+                    oArea.innerHTML = "请释放鼠标";
+                }
+                oArea.ondragleave = function() {
+                    oArea.innerHTML = "将图片拖放到该区域";
+                }
+                oArea.ondragover = function(ev) {
+                    ev.preventDefault();
+                }
+                oArea.ondrop = function(ev) {
+                    ev.preventDefault();
+                    var files = ev.dataTransfer.files;
+                    for(var i=0, len=files.length; i<len; i++) {
+                        var file = files[i];
+                        var reader = new FileReader();
+                        reader.readAsDataURL(file);
+                        (function(reader) {
+                            reader.onload = function() {
+                                var oImg = document.createElement("img");
+                                oImg.src = this.result;
+                                oImg.width = 600;
+                                oImg.height = 400;
+                                // 只显示一张图片
+                                for(var i=0; i<oPrev.childNodes.length; i++) {
+                                    oPrev.removeChild(oPrev.childNodes[0]);
+                                }
+                                oPrev.appendChild(oImg);
+                            }
+                        })(reader);
+                    }
+                }
+            }
             
         </script>
         

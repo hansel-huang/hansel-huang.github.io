@@ -79,8 +79,12 @@ E-mail: hansel2001@163.com
                 font-size: 15px;
                 display: inline;
             }
-            /* 标签页1: 相册 */
-            #tab1-album {
+            /* 标签页1: 留言 */
+            #tab1-message {
+                display: none;
+            }
+            /* 标签页2: 相册 */
+            #tab2-album {
                 margin-top: 20px;
                 width: 800px;
                 height: 530px;
@@ -112,10 +116,6 @@ E-mail: hansel2001@163.com
             #album-middle:hover {
                 transform: scale(1.2);
                 z-index: 20;  /* 防止遮住 */
-            }
-            /* 标签页2: 留言 */
-            #tab2-message {
-                display: none;
             }
             /* 标签页3: 日志 */
             #tab3-journal {
@@ -171,9 +171,9 @@ E-mail: hansel2001@163.com
             <div class="tab-area">
                 <a onclick="tab_exchange(0)"><b>主 页</b></a>
                 &emsp;
-                <a onclick="tab_exchange(1)"><b>相 册</b></a>
+                <a onclick="tab_exchange(1)"><b>留 言</b></a>
                 &emsp;
-                <a onclick="tab_exchange(2)"><b>留 言</b></a>
+                <a onclick="tab_exchange(2)"><b>相 册</b></a>
                 &emsp;
                 <a onclick="tab_exchange(3)"><b>日 志</b></a>
                 &emsp;
@@ -208,8 +208,15 @@ E-mail: hansel2001@163.com
             </div>
             
             
-            <!-- 标签页1: 相册 -->
-            <div id="tab1-album">
+            <!-- 标签页1: 留言 -->
+            <div id="tab1-message">
+                <!-- Gitalk留言区 -->
+                <div id="gitalk-container" style="width:860px;"></div>
+            </div>
+            
+            
+            <!-- 标签页2: 相册 -->
+            <div id="tab2-album">
                 
                 <!-- 小学相册 -->
                 <a href="./Album/primary/primary.html" target="_blank" title="小学"><img id="album-primary" src="./Album/primary/images/2012年11月11日 1915.jpg" width="160px"></a>
@@ -217,13 +224,6 @@ E-mail: hansel2001@163.com
                 <!-- 中学相册 -->
                 <a href="./Album/middle/middle.html" target="_blank" title="中学"><img id="album-middle" src="./Album/middle/images/2018年7月22日 1224.jpg" width="130px"></a>
                 
-            </div>
-            
-            
-            <!-- 标签页2: 留言 -->
-            <div id="tab2-message">
-                <!-- Gitalk留言区 -->
-                <div id="gitalk-container" style="width:860px;"></div>
             </div>
             
             
@@ -284,8 +284,8 @@ E-mail: hansel2001@163.com
             /* 标签页切换 */
             function tab_exchange(select) {
                 var tab0 = document.getElementById("tab0-main");
-                var tab1 = document.getElementById("tab1-album");
-                var tab2 = document.getElementById("tab2-message");
+                var tab1 = document.getElementById("tab1-message");
+                var tab2 = document.getElementById("tab2-album");
                 var tab3 = document.getElementById("tab3-journal");
                 var tab4 = document.getElementById("tab4-file");
                 var tab5 = document.getElementById("tab5-book");

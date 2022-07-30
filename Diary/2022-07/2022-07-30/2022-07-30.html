@@ -1,0 +1,162 @@
+<!--
+Diary-Page
+Blog Owner: Hansel Huang
+E-mail: hansel2001@163.com
+-->
+
+
+
+<!DOCTYPE HTML>
+
+
+<html>
+
+
+
+    <head>
+    
+        <meta charset="utf-8" />
+        
+        <!-- 导入pkg文件夹中的jQuery库 -->
+        <script src="../../../pkg/jquery-3.6.0.min.js"></script>
+        
+        <link rel="icon" type="image/png" sizes="144x144" href="../../../logo.png"/>
+        <!-- 网页标题 -->
+        <title>深度学习的发展历程 | Diary: 2022-07-30 | Hansel-Huang's Blog</title>
+        
+        <style>
+            body,h1,h2,h3,h4,h5,h6 {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                font-family: "Lucida Console", "Courier New", "仿宋", monospace;
+                font-size: 20px;
+                user-select: none;
+            }
+            p {
+                line-height: 32px;
+            }
+            a:link, a:visited {
+                color: #5599aa;
+            }
+            a:hover {
+                color: red;
+            }
+            .paper-sheet {
+                padding: 50px;
+                width: 800px;
+                text-align: left;
+                background-color: #fcfdf8;
+            }
+            /* 展开标题样式 */
+            .title-style {
+                margin-top: 40px;
+            }
+            .title-style:hover {
+                color: grey;
+            }
+            /* 图片引用格式 */
+            .pic-style {
+                text-align: center;
+            }
+            /* 参考文献引用数字样式 */
+            .cite-number {
+                line-height: 0;
+                vertical-align: super;
+                font-size: 12px;
+            }
+            .update-record {
+                padding: 20px;
+                width: 860px;
+                text-align: left;
+                background-color: #fcfdf8;
+            }
+            .container-bottom {
+                margin-top: 15px;
+                margin-bottom: 10px;
+            }
+        </style>
+        
+    </head>
+    
+    
+    
+    <body>
+    
+        <center>
+        
+            <a class="back-home" href="../../../index.html"><div style="height:10px; background-color:#99ccdd;"></div></a>
+            <h1 style="margin-top:40px; margin-bottom:50px;">深度学习的发展历程</h1>
+            
+            <!-- 文本区 -->
+            <div class="paper-sheet">
+            
+                <p>&emsp;&emsp;已经确定毕设打算做目标检测相关的课题，而且将来有幸考上研究生的话也会将目标检测作为自己的研究方向，那么现在就可以做点有意思的事情，比如把深度学习的历史脉络整理出来。所参考的资料肯定是来自互联网的各个地方，由于是毫无经验的辣鸡本科生，也好从现在开始学习如何引用参考文献。</p>
+                
+                <!-- AlexNet -->
+                <p><h3 class="title-style" id="alexnet-title">· AlexNet (2012.9.30)</h3></p>
+                <div id="alexnet-area">
+                    <div class="pic-style">
+                        <img src="./images/AlexNet三作者.jpg" width="500px"/><br>
+                        <em>[从左至右分别是Krizhevsky、Sutskever和Hinton]</em>
+                    </div>
+                    <p>&emsp;&emsp;AlexNet是由<label title="出生于乌克兰，在加拿大长大，是一位计算机科学家，因其在人工神经网络和深度学习方面的工作而闻名，他的许多关于机器学习和计算机视觉的论文经常被其他研究人员所引用。他还是CIFAR-10和CIFAR-100数据集的创建者。是Geoffrey Hinton的博士研究生。[2]">Alex Krizhevsky</label>、<label title="加拿大人，于2000年至2002年就读于以色列开放大学，后来他获得了多伦多大学计算机科学系的计算机科学学士、硕士和博士学位，并在那里接受了Geoffrey Hinton的指导。[3]">Ilya Sutskever</label>和<label title="生于1947年12月6日，英裔加拿大认知心理学家和计算机科学家。Hinton的贡献包括但不限于反向传播算法的应用、人工神经网络、玻尔兹曼机、胶囊神经网络，被视为深度学习的领军人物。Hinton与Yoshua Bengio和Yann LeCun一起在2018年获得了图灵奖，以表彰他们在深度学习方面的工作。[4]">Geoffrey Hinton</label>在<label title="ImageNet大规模视觉识别挑战赛（ImageNet Large Scale Visual Recognition Challenge）">ISLVRC</label> 2012提出，并获得了当年的竞赛冠军，该网络取得了15.3%的top-5错误率，比亚军低10.8个百分点以上。<label class="cite-number">[1]</label>正是从那年开始，深度学习开始迅速发展。</p>
+                    
+                    <a href="https://hansel.lanzouy.com/iLPo508of0ha" target="_blank">AlexNet原始论文（下载密码：123）</a><br>
+                    <hr width="800px">
+                    参考文献：<br>
+                    <h6>[1] Wikipedia.<a href="https://en.wikipedia.org/wiki/AlexNet" target="_blank">AlexNet</a>[EB/OL].2022-07-30.</h6>
+                    <h6>[2] Wikipedia.<a href="https://en.wikipedia.org/wiki/Alex_Krizhevsky" target="_blank">Alex Krizhevsky</a>[EB/OL].2022-07-30.</h6>
+                    <h6>[3] Wikipedia.<a href="https://en.wikipedia.org/wiki/Ilya_Sutskever" target="_blank">Ilya Sutskever</a>[EB/OL].2022-07-30.</h6>
+                    <h6>[4] Wikipedia.<a href="https://en.wikipedia.org/wiki/Geoffrey_Hinton" target="_blank">Geoffrey Hinton</a>[EB/OL].2022-07-30.</h6>
+                    
+                </div>
+                
+                <!-- ResNet -->
+                <p><h3 class="title-style" id="resnet-title">· ResNet</h3></p>
+                <div id="resnet-area">
+                    <a href="https://hansel.lanzouy.com/iUVR708oflih" target="_blank">AlexNet原始论文（下载密码：123）</a>
+                </div>
+                
+            </div>
+            <br>
+            
+            <!-- 更新记录 -->
+            <div class="update-record">
+                <h4>Update Record:</h4>
+                <p>
+                    2022-07-30 17:31 | 开始编写AlexNet内容<br>
+                </p>
+            </div>
+            
+            <!-- 底部指向github源文件 -->
+            <div class="container-bottom">
+                <small>This site is open sourse. <a href="https://github.com/hansel-huang/hansel-huang.github.io" target="_blank">See it on Github.</a></small><br>
+                <small>Click the blue bar at the top of the page to return Home.</small>
+            </div>
+            
+        </center>
+        
+        
+        <script>
+            
+            /* AlexNet */
+            //$("#alexnet-area").hide();
+            $("#alexnet-title").click(function(){
+                $("#alexnet-area").toggle(160);
+            });
+            
+            /* ResNet */
+            $("#resnet-area").hide();
+            $("#resnet-title").click(function(){
+                $("#resnet-area").toggle(160);
+            });
+        
+        </script>
+        
+    </body>
+    
+    
+    
+</html>

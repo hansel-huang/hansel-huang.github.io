@@ -1,0 +1,50 @@
+<a href="../index.html">主页</a>/conda命令<br>
+<hr>
+<br>
+1、查看当前拥有的虚拟环境：<br>
+<b>conda info --envs</b><br>
+或者<br>
+<b>conda env list</b><br>
+<br>
+2、创建虚拟环境（环境名为mmyolo）：<br>
+<b>conda create -n mmyolo python=3.8</b><br>
+<br>
+3、进入虚拟环境：<br>
+<b>activate mmyolo</b><br>
+<br>
+4、查看当前环境中所有安装过的程序：<br>
+<b>conda list</b><br>
+<br>
+5、查看当前环境中所有python的模块：<br>
+<b>pip list</b><br>
+出现Could not fetch URL https://pypi.tuna.tsinghua.edu.cn/simple/pip/……是由于SSL证书认证问题，改成以下命令可避免：<br>
+<b>pip list --trusted-host pypi.tuna.tsinghua.edu.cn</b><br>
+<br>
+6、配置镜像提高下载速度（以opencv为例）：<br>
+conda配置镜像（永久添加）：<br>
+<b>conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</b><br>
+<b>conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</b><br>
+<b>conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/</b><br>
+conda配置镜像（单条命令）：<br>
+<b>conda install opencv -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</b><br>
+pip配置镜像：<br>
+<b>pip install opencv -i https://mirrors.aliyun.com/pypi/simple/</b><br>
+以下为常用的pip安装镜像：<br>
+清华：https://pypi.tuna.tsinghua.edu.cn/simple/<br>
+阿里云：https://mirrors.aliyun.com/pypi/simple/<br>
+中国科技大学: https://pypi.mirrors.ustc.edu.cn/simple/<br>
+华中理工大学：https://pypi.hustunique.com/<br>
+山东理工大学：https://pypi.sdutlinux.org/<br>
+豆瓣：https://pypi.douban.com/simple/<br>
+<br>
+7、退出环境：<br>
+<b>conda deactivate</b><br>
+<br>
+8、删除环境：<br>
+<b>conda remove -n mmyolo --all</b><br>
+<br>
+9、导出和导入环境：<br>
+导出环境：<br>
+conda env export > C:/Users/15645/Downloads/environment.yml<br>
+导入环境：<br>
+conda env create -f /root/autodl-fs/environment.yml<br>

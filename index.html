@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <style>
+      *{padding:0; margin:0; box-sizing:border-box;}
+      /* 导航栏按钮 */
+      .button-nav {
+        text-align:center;
+        display:block;
+        user-select:none;
+      }
+      .button-nav:hover {
+        color:red;
+      }
+    </style>
+<!--------------------------------------------------------------------------------------------------------->
+    <script>
+      /* 内容区切换 */
+      function content_exchange(select) {
+        var iframe = document.getElementById("content-area");
+        if(select == 0) {
+          iframe.src="main_page.html"
+        } else if(select == 1) {
+          iframe.src="web_page.html"
+        } else if(select == 2) {
+          iframe.src="music_page.html"
+        } else if(select == 3) {
+          iframe.src="video_page.html"
+        } else if(select == 4) {
+          iframe.src="album_page.html"
+        }
+      }
+    </script>
+  </head>
+<!--------------------------------------------------------------------------------------------------------->
+  <body>
+    <!--导航栏-->
+    <div style="width:4%;height:99%;background-color:grey;display:inline-block;vertical-align:top">
+      <br><a class="button-nav" onclick="content_exchange(0)">主 页</a><br>
+      <a class="button-nav" onclick="content_exchange(1)">网 站</a><br>
+      <a class="button-nav" onclick="content_exchange(2)">音 乐</a><br>
+      <a class="button-nav" onclick="content_exchange(3)">视 频</a><br>
+      <a class="button-nav" onclick="content_exchange(4)">相 册</a><br>
+    </div>
+    <!--内容区-->
+    <iframe id="content-area" src="main_page.html" style="width:95%;height:99%;border:0;"></iframe>
+  </body>
+</html>

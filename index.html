@@ -25,11 +25,9 @@
         } else if(select == 1) {
           iframe.src="web_page.html"
         } else if(select == 2) {
-          iframe.src="music_page.html"
+          iframe.src="up_page.html"
         } else if(select == 3) {
-          iframe.src="video_page.html"
-        } else if(select == 4) {
-          iframe.src="album_page.html"
+          iframe.src="comment_page.html"
         }
       }
     </script>
@@ -40,9 +38,8 @@
     <div style="width:4%;height:99%;background-color:grey;display:inline-block;vertical-align:top">
       <br><a class="button-nav" onclick="content_exchange(0)">主 页</a><br>
       <a class="button-nav" onclick="content_exchange(1)">网 站</a><br>
-      <a class="button-nav" onclick="content_exchange(2)">音 乐</a><br>
-      <a class="button-nav" onclick="content_exchange(3)">视 频</a><br>
-      <a class="button-nav" onclick="content_exchange(4)">相 册</a><br>
+      <a class="button-nav" onclick="content_exchange(2)">up 主</a><br>
+      <a class="button-nav" onclick="content_exchange(3)">留 言</a><br>
     </div>
     <!--内容区-->
     <iframe id="content-area" src="main_page.html" style="width:95%;height:99%;border:0;"></iframe>

@@ -1,47 +1,5 @@
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <style>
-      *{padding:0; margin:0; box-sizing:border-box;}
-      /* 导航栏按钮 */
-      .button-nav {
-        text-align:center;
-        display:block;
-        user-select:none;
-      }
-      .button-nav:hover {
-        color:red;
-      }
-    </style>
-<!--------------------------------------------------------------------------------------------------------->
-    <script>
-      /* 内容区切换 */
-      function content_exchange(select) {
-        var iframe = document.getElementById("content-area");
-        if(select == 0) {
-          iframe.src="main_page.html"
-        } else if(select == 1) {
-          iframe.src="web_page.html"
-        } else if(select == 2) {
-          iframe.src="up_page.html"
-        } else if(select == 3) {
-          iframe.src="comment_page.html"
-        }
-      }
-    </script>
-  </head>
-<!--------------------------------------------------------------------------------------------------------->
-  <body>
-    <!--导航栏-->
-    <div style="width:4%;height:99%;background-color:grey;display:inline-block;vertical-align:top">
-      <br><a class="button-nav" onclick="content_exchange(0)">主 页</a><br>
-      <a class="button-nav" onclick="content_exchange(1)">网 站</a><br>
-      <a class="button-nav" onclick="content_exchange(2)">up 主</a><br>
-      <a class="button-nav" onclick="content_exchange(3)">留 言</a><br>
-    </div>
-    <!--内容区-->
-    <iframe id="content-area" src="main_page.html" style="width:95%;height:99%;border:0;"></iframe>
-  </body>
-</html>
+<script>
+<!--
+document.write(unescape("%3Chtml%3E%0A%20%20%3Chead%3E%0A%20%20%20%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%20%20%20%3Cmeta%20http-equiv%3D%22X-UA-Compatible%22%20content%3D%22IE%3Dedge%22%3E%0A%20%20%20%20%3Cmeta%20name%3D%22viewport%22%20content%3D%22width%3Ddevice-width%2Cinitial-scale%3D1.0%22%3E%0A%20%20%20%20%3Cstyle%3E%0A%20%20%20%20%20%20*%7Bpadding%3A0%3B%20margin%3A0%3B%20box-sizing%3Aborder-box%3B%7D%0A%20%20%20%20%20%20/*%20%u5BFC%u822A%u680F%u6309%u94AE%20*/%0A%20%20%20%20%20%20.button-nav%20%7B%0A%20%20%20%20%20%20%20%20text-align%3Acenter%3B%0A%20%20%20%20%20%20%20%20display%3Ablock%3B%0A%20%20%20%20%20%20%20%20user-select%3Anone%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20.button-nav%3Ahover%20%7B%0A%20%20%20%20%20%20%20%20color%3Ared%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%3C/style%3E%0A%3C%21---------------------------------------------------------------------------------------------------------%3E%0A%20%20%20%20%3Cscript%3E%0A%20%20%20%20%20%20/*%20%u5185%u5BB9%u533A%u5207%u6362%20*/%0A%20%20%20%20%20%20function%20content_exchange%28select%29%20%7B%0A%20%20%20%20%20%20%20%20var%20iframe%20%3D%20document.getElementById%28%22content-area%22%29%3B%0A%20%20%20%20%20%20%20%20if%28select%20%3D%3D%200%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20iframe.src%3D%22main_page.html%22%0A%20%20%20%20%20%20%20%20%7D%20else%20if%28select%20%3D%3D%201%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20iframe.src%3D%22web_page.html%22%0A%20%20%20%20%20%20%20%20%7D%20else%20if%28select%20%3D%3D%202%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20iframe.src%3D%22up_page.html%22%0A%20%20%20%20%20%20%20%20%7D%20else%20if%28select%20%3D%3D%203%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20iframe.src%3D%22video_page.html%22%0A%20%20%20%20%20%20%20%20%7D%20else%20if%28select%20%3D%3D%204%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20iframe.src%3D%22comment_page.html%22%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%3C/script%3E%0A%20%20%3C/head%3E%0A%3C%21---------------------------------------------------------------------------------------------------------%3E%0A%20%20%3Cbody%3E%0A%20%20%20%20%3C%21--%u5BFC%u822A%u680F--%3E%0A%20%20%20%20%3Cdiv%20style%3D%22width%3A4%25%3Bheight%3A99%25%3Bbackground-color%3Agrey%3Bdisplay%3Ainline-block%3Bvertical-align%3Atop%22%3E%0A%20%20%20%20%20%20%3Cbr%3E%3Ca%20class%3D%22button-nav%22%20onclick%3D%22content_exchange%280%29%22%3E%u4E3B%20%u9875%3C/a%3E%3Cbr%3E%0A%20%20%20%20%20%20%3Ca%20class%3D%22button-nav%22%20onclick%3D%22content_exchange%281%29%22%3E%u7F51%20%u7AD9%3C/a%3E%3Cbr%3E%0A%20%20%20%20%20%20%3Ca%20class%3D%22button-nav%22%20onclick%3D%22content_exchange%282%29%22%3Eup%20%u4E3B%3C/a%3E%3Cbr%3E%0A%20%20%20%20%20%20%3Ca%20class%3D%22button-nav%22%20onclick%3D%22content_exchange%283%29%22%3E%u89C6%20%u9891%3C/a%3E%3Cbr%3E%0A%20%20%20%20%20%20%3Ca%20class%3D%22button-nav%22%20onclick%3D%22content_exchange%284%29%22%3E%u7559%20%u8A00%3C/a%3E%3Cbr%3E%0A%20%20%20%20%3C/div%3E%0A%20%20%20%20%3C%21--%u5185%u5BB9%u533A--%3E%0A%20%20%20%20%3Ciframe%20id%3D%22content-area%22%20src%3D%22main_page.html%22%20style%3D%22width%3A95%25%3Bheight%3A99%25%3Bborder%3A0%3B%22%3E%3C/iframe%3E%0A%20%20%3C/body%3E%0A%3C/html%3E"));
+//-->
+</script>
